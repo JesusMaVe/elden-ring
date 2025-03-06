@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgb(236, 223, 204);
+  min-height: 100vh;
+  margin: 0;
+  
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas:
+    "sidebar main"
+    "sidebar main";
+  transition: grid-template-columns 0.3s ease;
+  
+  background: linear-gradient(
+    135deg,
+    rgba(48, 46, 46, 0.8) 20%,
+    rgba(80, 92, 84, 0.7) 50%,
+    rgba(94, 92, 85, 0.6) 80%
+  ),
+  url("../img/arbol.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-block-end: 0.5rem;
+}
+
+p {
+  margin-block-end: 2rem;
+}
+
+.full-bleed {
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  padding: 2rem;
+  margin-block-end: 2rem;
+}
+
+.icon {
+  display: block;
+  font-size: 3rem;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr min(65ch, 100% - 3rem * 2) 1fr;
+  grid-column-gap: 3rem;
+}
+main > * {
+  grid-column: 2;
+}
+
+.full-bleed {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+.full-bleed img {
+  width: 30px;
+  height: auto;
+}
+
+nav {
+  font-style: italic;
+  font-weight: 300;
+  position: fixed;
+  inset: 1rem 3rem auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.5rem, 2.5vw, 3rem);
+  background-color: transparent;
+  border-radius: 0.5rem;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#videos iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+#oficinas iframe {
+  width: 100%;
+  max-width: 560px;
+  border: none;
+  border-radius: 8px;
+}
+
+#about,
+#oficinas,
+#explore,
+#zonas {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container iframe {
+  border-radius: 8px;
+}
+
+area {
+  outline: none;
+}
+
+area:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+img {
+  border-radius: 8px;
+  width: 90%;
+  height: auto;
+}
+.game-info {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.game-info th,
+.game-info td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.game-info th {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.game-info tr:hover {
+  background-color: #1d1d18;
+}
+
+.dashboard-sidebar {
+  grid-area: sidebar;
+  position: relative;
+  color: #fff;
+  background-color: transparent;
+  height: 100vh;
+  position: fixed;
+  width: 5rem;
+  transition: width 0.5s ease;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  line-height: 1.3;
+}
+
+body.sb-expand .dashboard-sidebar {
+  width: 12.5rem;
+}
+
+.dashboard-main {
+  grid-area: main;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  margin-left: 5rem; 
+}
+
+
+.dashboard-sidebar button {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 2rem; 
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+area{
+  z-index: 1000;
+}
