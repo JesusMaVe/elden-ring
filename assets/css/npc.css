@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  color: rgb(236, 223, 204);
+  background-color: #282a3a;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: rgb(236, 223, 204);
+}
+
+.card {
+  background-color: #353747;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 3px solid #1e2030;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card-description {
+  padding: 1.5rem;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card-description h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #e2c792;
+}
+
+.card-description p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.audio {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+audio {
+  width: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .card-image {
+    width: 35%;
+    height: auto;
+    border-bottom: none;
+    border-right: 3px solid #1e2030;
+  }
+
+  .card-description {
+    width: 65%;
+  }
+
+  .audio {
+    padding: 0 1.5rem 1.5rem;
+    width: 65%;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .card-description h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.back{
+  display: block;
+  padding: 10px 20px;
+  margin: 0 auto 20px;
+  background-color: #353747;
+  color: rgb(236, 223, 204);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  width: fit-content;
+  transition: background-color 0.3s;
+}
+
+.back:hover {
+  background-color: #1e2030;
+}

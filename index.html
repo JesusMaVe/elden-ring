@@ -15,15 +15,32 @@
   <body>
     <main>
       <nav>
-        <a href="#about">About</a>
-        <a href="#explore">Explore</a>
-        <a href="#zonas">Zonas</a>
-        <a href="#videos">Videos</a>
-        <a href="#oficinas">Oficinas</a>
+        <ol>
+          <li><a href="#about">About</a></li>
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#zonas">Zonas</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#oficinas">Oficinas</a></li>
+          <li><a href="#cuestionario">Cuestionario</a></li>
+        </ol>
       </nav>
+
       <section id="about">
         <div class="logo">
-          <img src="assets/img/elden-ring.png" alt="Logo de Elden Ring" />
+          <img
+            src="assets/img/elden-ring.png"
+            alt="Logo de Elden Ring"
+            id="logo-img"
+          />
+          <p class="click-text">Haz clic en la imagen</p>
+          <dialog id="logo-dialog">
+            <ul>
+              <li><a href="/npc.html">Personajes</a></li>
+              <li><a href="/goty.html">GOTY</a></li>
+              <li><a href="/dlc.html">DLC</a></li>
+              <li><a href="/clases.html">Clases</a></li>
+            </ul>
+          </dialog>
         </div>
         <p>
           Hace mucho tiempo, los guerreros de Lord Godfrey fueron despojados de
@@ -166,6 +183,17 @@
           </tbody>
         </table>
       </section>
+      <div class="full-bleed">
+        <img src="assets/img/github.png" alt="" />
+        Sígueme en:
+        <a
+          href="https://github.com/jesusMaVe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Jesus Emilio Marentes Vejar
+        </a>
+      </div>
       <section id="videos">
         <h1>Trailer Elden Ring</h1>
         <div class="video-container">
@@ -208,27 +236,155 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
-      <div class="full-bleed">
-        <img src="assets/img/github.png" alt="" />
-        Sígueme en:
-        <a
-          href="https://github.com/jesusMaVe/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Jesus Emilio Marentes Vejar
-        </a>
-      </div>
+      <section id="cuestionario">
+        <h1>Cuestionario de Jugador</h1>
+        <p>
+          Comparte tu experiencia en las Tierras Intermedias para ayudar a otros
+          Sin Luz en su viaje:
+        </p>
+
+        <form id="elden-ring-form" action="#" method="post">
+          <div class="form-group">
+            <label for="player-name">Nombre de Jugador:</label>
+            <input
+              type="text"
+              id="player-name"
+              name="player-name"
+              placeholder="Ingresa tu nombre o gamertag"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="play-time">Horas Jugadas:</label>
+            <input
+              type="number"
+              id="play-time"
+              name="play-time"
+              min="1"
+              max="999"
+              placeholder="100"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Plataforma:</label>
+            <div class="radio-group">
+              <input type="radio" id="platform-pc" name="platform" value="PC" />
+              <label for="platform-pc">PC</label>
+
+              <input
+                type="radio"
+                id="platform-ps5"
+                name="platform"
+                value="PS5"
+              />
+              <label for="platform-ps5">PlayStation 5</label>
+
+              <input
+                type="radio"
+                id="platform-xbox"
+                name="platform"
+                value="Xbox"
+              />
+              <label for="platform-xbox">Xbox Series X/S</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="class-select">Clase Favorita:</label>
+            <select id="class-select" name="class">
+              <option value="">--Selecciona tu clase--</option>
+              <option value="vagabundo">Vagabundo</option>
+              <option value="heroe">Héroe</option>
+              <option value="astrologo">Astrólogo</option>
+              <option value="samurai">Samurái</option>
+              <option value="confesor">Confesor</option>
+              <option value="prisionero">Prisionero</option>
+              <option value="profeta">Profeta</option>
+              <option value="guerrero">Guerrero</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="difficulty">Dificultad Percibida:</label>
+            <input
+              type="range"
+              id="difficulty"
+              name="difficulty"
+              min="1"
+              max="10"
+              value="7"
+            />
+            <div class="range-labels">
+              <span>Fácil</span>
+              <span>Difícil</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="completion-date">Fecha de Completado:</label>
+            <input type="date" id="completion-date" name="completion-date" />
+          </div>
+
+          <div class="form-group">
+            <label for="favorite-boss">Jefe Favorito:</label>
+            <input
+              type="text"
+              id="favorite-boss"
+              name="favorite-boss"
+              list="bosses"
+            />
+            <datalist id="bosses">
+              <option value="Malenia, Blade of Miquella"></option>
+              <option value="Starscourge Radahn"></option>
+              <option value="Godfrey, First Elden Lord"></option>
+              <option value="Godrick the Grafted"></option>
+              <option value="Rennala, Queen of the Full Moon"></option>
+              <option value="Maliketh, the Black Blade"></option>
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="feedback">Tu Experiencia:</label>
+            <textarea
+              id="feedback"
+              name="feedback"
+              rows="4"
+              placeholder="Comparte tu experiencia en Elden Ring..."
+            ></textarea>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              value="yes"
+            />
+            <label for="newsletter"
+              >Suscribirme a novedades sobre FromSoftware</label
+            >
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn-submit">Enviar Respuestas</button>
+            <button type="reset" class="btn-reset">Limpiar Formulario</button>
+          </div>
+        </form>
+      </section>
     </main>
-    <aside class="dashboard-sidebar">
-        <div class="logo">
-          <img src="assets/img/iconer.png" alt="">
-        </div>
-        <button type="button" id="resize" aria-label="Expandir menú">
-          <img src="assets/img/proximo.png" alt="Icono de expansión">
-        </button>
-      </aside>
-      
-      <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
