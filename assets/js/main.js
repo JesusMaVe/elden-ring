@@ -19,3 +19,8 @@ document.addEventListener("click", (event) => {
         setTimeout(() => logoDialog.close(), 300);
     }
 });
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  });
